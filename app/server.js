@@ -1,5 +1,7 @@
 const app = require("./app");
-const server = app.listen((process.env.PORT || 3000));
+const port = process.env.PORT || 4000;
+console.log(`Starting Extract server on port: ${port}`)
+const server = app.listen(port);
 
 process.on("SIGINT", () => {
     if (process.env.NODE_ENV === "production") {
